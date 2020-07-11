@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+    ">
+
+    <!--    提供方信息-->
+    <dubbo:application name="dubbo-client" owner="xp"/>
+
+    <!--  注册中心  -->
+    <dubbo:registry address="N/A" />
+
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <dubbo:reference id="xpHelloService" interface="com.xiepanpan.dubbo.IXpHello" url="dubbo://192.168.56.1:20880/com.xiepanpan.dubbo.IXpHello"/>
+
+</beans>
